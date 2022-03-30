@@ -1,12 +1,13 @@
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, TouchableOpacityProps } from "react-native";
 
-export function Button({ onPress }) {
+type ButtonProps = TouchableOpacityProps
+
+export function Button({ ...rest }:ButtonProps) {
   return (
     <TouchableOpacity
-      style={styles.button}
-      activeOpacity={0.3}
-      onPress={onPress}
+      style={styles.button}  
+      {...rest}
     >
       <Text style={styles.buttonText}>Add</Text>
     </TouchableOpacity>
